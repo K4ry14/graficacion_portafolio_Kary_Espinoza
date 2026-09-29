@@ -1,4 +1,9 @@
-//AA 1.1 Lienzo y primitivas
+/*
+  =======================================================
+     ACTIIVIDAD 1.1: GEOMETRÍA Y PRIMITIVAS DE LIENZO
+  =======================================================
+  
+*/
 
 function setup() {
   createCanvas(400, 400);
@@ -39,8 +44,12 @@ function draw() {
   line(x - 25, y + 95, x - 30, y + 120);
   line(x + 25, y + 95, x + 30, y + 120);
 }
-
-// AA 1.2 Colores y estilos
+/*
+  =======================================================
+     ACTIVIDAD 1.2: ESTILOS, PALETAS Y TRANSPARENCIAS
+  =======================================================
+  
+*/
 function setup() {
   createCanvas(400, 400);
   background('purple');
@@ -90,8 +99,12 @@ function draw() {
   line(x - 25, y + 95, x - 30, y + 120);
   line(x + 25, y + 95, x + 30, y + 120);
 }
+/*
+  =======================================================
+               ACTIVIDAD 1.3: ARTE DIGITAL 
+  =======================================================
 
-//AA 1.3 Arte Digital
+*/
 function setup() {
   createCanvas(400, 600);
 }
