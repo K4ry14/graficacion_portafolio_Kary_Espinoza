@@ -1,0 +1,188 @@
+//AA 1.1 Lienzo y primitivas
+
+function setup() {
+  createCanvas(400, 400);
+  background('purple');
+  fill('0, 128, 0');
+  rectMode(CENTER);
+}
+
+function draw() {
+ 
+  let x = width / 2;
+  let y = height / 2;
+
+  fill(180);
+  rect(x, y + 40, 80, 90, 10);
+
+  fill(200);
+  rect(x, y - 60, 60, 60, 8);
+  fill(255);
+  ellipse(x - 15, y - 65, 20, 20);
+  ellipse(x + 15, y - 65, 20, 20);
+
+  fill(0);
+  let pupilOffsetX = constrain(mouseX - x, -5, 5);
+  let pupilOffsetY = constrain(mouseY - (y - 65), -5, 5);
+  ellipse(x - 15 + pupilOffsetX, y - 65 + pupilOffsetY, 4, 0);
+  ellipse(x + 15 + pupilOffsetX, y - 65 + pupilOffsetY, 4, 0);
+  
+  stroke(51, 119, 255);
+  line(x - 15, y - 45, x + 15, y - 45);
+  
+  stroke(191,128,255);
+  strokeWeight(6);
+  line(x - 50, y + 15, x - 90, y - 20);
+  line(x + 50, y + 15, x + 90, y - 20);
+
+  strokeWeight(8);
+  line(x - 25, y + 95, x - 30, y + 120);
+  line(x + 25, y + 95, x + 30, y + 120);
+}
+
+// AA 1.2 Colores y estilos
+function setup() {
+  createCanvas(400, 400);
+  background('purple');
+  fill('0, 128, 0');
+  rectMode(CENTER);
+}
+
+function draw() {
+  let x = width / 2;
+  let y = height / 2;
+
+  // Se agrego noStroke() para quitar el contorno del cuerpo
+  noStroke();
+  fill(180);
+  rect(x, y + 40, 80, 90, 10);
+
+  // Se movio la instruccion de color para probar la renderizacion
+  rect(x, y - 60, 60, 60, 8);
+
+  fill(255);
+  ellipse(x - 15, y - 65, 20, 20);
+  ellipse(x + 15, y - 65, 20, 20);
+
+  fill(0);
+  let pupilOffsetX = constrain(mouseX - x, -5, 5);
+  let pupilOffsetY = constrain(mouseY - (y - 65), -5, 5);
+  ellipse(x - 15 + pupilOffsetX, y - 65 + pupilOffsetY, 4, 0);
+  ellipse(x + 15 + pupilOffsetX, y - 65 + pupilOffsetY, 4, 0);
+
+  stroke(51, 119, 255);
+  line(x - 15, y - 45, x + 15, y - 45);
+
+  // Se agrego noFill() para quitar el relleno en esta seccion
+  noFill();
+  stroke(191,128,255);
+  strokeWeight(6);
+  line(x - 50, y + 15, x - 90, y - 20);
+  line(x + 50, y + 15, x + 90, y - 20);
+
+  // Se agrego un cuarto parametro (120) para dar transparencia alfa
+  fill(0, 255, 200, 120);
+  noStroke();
+  rect(x, y - 60, 70, 30, 5);
+
+  strokeWeight(8);
+  stroke(0);
+  line(x - 25, y + 95, x - 30, y + 120);
+  line(x + 25, y + 95, x + 30, y + 120);
+}
+
+//AA 1.3 Arte Digital
+function setup() {
+  createCanvas(400, 600);
+}
+
+function draw() {
+  background(220);
+  
+  // 1. Para el cielo 
+  noStroke();
+  
+  fill("#D84315"); 
+  rect(0, 0, 400, 40);
+  
+  fill("#FF8F00"); 
+  rect(0, 40, 400, 40);
+  
+  fill("#FFC107"); 
+  rect(0, 80, 400, 40);
+  
+  fill("#D84315"); 
+  rect(0, 120, 500, 30);
+  
+  fill("#FFA000"); 
+  rect(0, 150, 400, 30);
+
+  // 2. el mar 
+  fill("#1A237E"); 
+  rect(0, 180, 600, 140);
+
+ 
+  fill("#1A237E"); 
+  rect(0, 180, 400, 420);
+
+  stroke("#0D1B2A"); 
+  strokeWeight(3);
+  noFill();
+
+  
+  fill("#FFF59D"); // Reflejo de el agua
+  ellipse(200, 220, 450, 40);
+
+  // Base del puente
+  fill("#5D4037"); 
+  triangle(0, 250, 0, 600, 400, 600);
+
+
+  //circunferencia del agua 
+  
+  // Barandales 
+  line(30, 240, 30, 275);
+  line(80, 275, 80, 320);
+  line(140, 320, 140, 375);
+  line(200, 365, 200, 435);
+  line(270, 420, 270, 500);
+
+  // 2. Color y grosor para las líneas de los barandales
+  stroke("#3E2723"); 
+  strokeWeight(5);
+  line(0, 220, 380, 520);
+  line(0, 245, 400, 550);
+  line(0, 270, 400, 580);
+  noStroke();
+  
+  // Siluetas al fondo tipo bases 
+  noStroke();
+  fill("#1C313A"); // Silueta 1
+  rect(10, 240, 20, 50);
+  fill("#1C313A"); // Silueta 2
+  rect(40, 240, 20, 60);
+
+ 
+  // Cuerpo 
+  fill("#212121"); 
+  rect(210, 380, 100, 220);
+  triangle(210, 380, 260, 300, 310, 380); // Hombros
+  
+  // Cabeza (Elipse)
+  fill("#D4C790"); 
+  ellipse(260, 310, 70, 90);
+  
+  // Ojos 
+  fill("#212121");
+  ellipse(245, 295, 12, 16);
+  ellipse(275, 295, 12, 16);
+  
+  // Boca gritando 
+  fill("#212121");
+  ellipse(260, 335, 20, 35);
+  
+  // Manos que van en la cara
+  fill("#E0D8B0");
+  ellipse(218, 320, 20, 60); // Mano izquierda
+  ellipse(302, 320, 20, 60); // Mano derecha
+}
